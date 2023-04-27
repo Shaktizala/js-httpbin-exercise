@@ -9,7 +9,7 @@ async function delay (delay) {
     return true
 }
 
-async function postBody(body) {
+async function post(body) {
     let res = await fetch(`https://httpbin.org/anything/`, {
         method: "POST",
         headers: {
@@ -24,7 +24,7 @@ async function run() {
     console.time('Execution time')
     let uuid = getUUID()
     let wait = delay(2)
-    let data =await postBody(await uuid)
+    let data =await post(await uuid)
     await wait
     console.timeEnd('Execution time')
 }
